@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const plm = require("passport-local-mongoose");
-mongoose.connect(process.env.MongoDb);
+mongoose.connect("mongodb+srv://MUN24:mun.com@muncluster.cinld.mongodb.net/");
 
 const adminSchema = new mongoose.Schema({
   username: {

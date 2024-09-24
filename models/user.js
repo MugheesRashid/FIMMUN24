@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-mongoose.connect(process.env.MongoDb);
+mongoose.connect("mongodb+srv://MUN24:mun.com@muncluster.cinld.mongodb.net/");
 
 const userSchema = new mongoose.Schema({
   fullname: {

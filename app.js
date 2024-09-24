@@ -5,12 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
 require('dotenv').config();
-
+const cors = require("cors")
+const corsConfig = {
+  origin: "*",
+  Credential : true,
+  methods: ["GET", "POST", "PUT", "DELETE", ]
+}
 var indexRouter = require('./routes/index');
 var adminModel = require("./models/admin")
 const passport = require('passport');
 
 var app = express();
+app.options( "",cors(corsConfig))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
