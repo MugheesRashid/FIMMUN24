@@ -8,7 +8,7 @@ require('dotenv').config();
 const cors = require("cors")
 const corsConfig = {
   origin: "*",
-  Credential : true,
+  credentials: true, // Fix the typo
   methods: ["GET", "POST", "PUT", "DELETE", ]
 }
 var indexRouter = require('./routes/index');
@@ -17,6 +17,7 @@ const passport = require('passport');
 
 var app = express();
 app.options( "",cors(corsConfig))
+app.use(cors(corsConfig))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

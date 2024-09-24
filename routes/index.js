@@ -21,7 +21,7 @@ const seatLimits = {
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index');
+res.send("Hi")
 });
 
 router.get('/about', function(req, res) {
