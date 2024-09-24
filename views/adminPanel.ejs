@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card {
+      background-color: #1e293b; /* Darker gray for card */
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 p-4 flex justify-between items-center">
+    <!-- Hamburger Icon for Mobile -->
+    <div class="sm:hidden">
+      <button id="menu-btn" class="text-blue-400 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Links -->
+    <div id="menu" class="hidden sm:flex sm:flex-row flex flex-col space-x-4">
+      <a href="/pannel" class="text-blue-400 hover:text-blue-300">All Registries</a>
+      <a href="/pannel/Unverified" class="text-blue-400 hover:text-blue-300">Unverified</a>
+      <a href="/pannel/Verified" class="text-blue-400 hover:text-blue-300">Verified</a>
+      <a href="/pannel/Removed" class="text-blue-400 hover:text-blue-300">Removed</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="flex-1 p-4">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <!-- Card Example -->
+       <% users.forEach((elem, idx)=>{ %>
+        <a href="/user-preview/<%= elem._id %>" class="card">
+          <p class="font-semibold">Username: <span class="text-blue-300"><%= elem.fullname %></span></p>
+          <p class="mt-2">deligationType: <span class="text-blue-300"><%= elem.deligationType %></span></p>
+          <% if(elem.deligationType !== "Observer"){ %>
+            <p class="mt-2">Committee: <span class="text-blue-300"><%= elem.committee %></span></p>
+         <% } %>
+          <p class="mt-2">Status: 
+            <% if (elem.status === 'Unverified') { %>
+                <span class="text-yellow-400">Unverified</span>
+            <% } else if (elem.status === 'Removed') { %>
+                <span class="text-red-400">Removed</span>
+            <% } else { %>
+                <span class="text-green-400">Verified</span>
+            <% } %>
+        </p>
+        
+        </a>
+      <%  }) %>
+
+      <!-- Repeat Card as needed -->
+
+    </div>
+  </div>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+  
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

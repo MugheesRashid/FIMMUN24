@@ -1,0 +1,48 @@
+.loader-page {
+    background-color: #000000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all .5s ease-out;
+  }
+  .loader-container {
+    /* border: 1px solid steelblue; */
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+  }
+  .loader {
+    width: 300px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative;
+  }
+  .loader-fill {
+    background-color: steelblue;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    position: absolute;
+  }
+  .logoLoader{
+    height: 300px;
+    width: 300px;
+    background-image: url('../images/bigLogo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+  }

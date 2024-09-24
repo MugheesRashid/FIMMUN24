@@ -1,0 +1,52 @@
+.footer ,body {
+    background: linear-gradient(135deg, #000000, #00008b); /* Gradient Background */
+  }
+  .iti {
+    width: 100%;
+    color: #fff;
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  .input-focus:focus {
+    outline: none;
+    border-color: #3b82f6; /* Blue border on focus */
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  .custom-file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+ }
+ 
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.file-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.menu::-webkit-scrollbar {
+    display: none
+}
+::selection{
+  color: #fff;
+  background-color: #000000;
+}
+.iti__country-list{
+  color: #ffffff!important;
+  background-color: #000!important;
+  border-radius:5px!important;
+}

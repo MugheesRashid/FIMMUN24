@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./stylesheets/footer.css">
+    <link rel="stylesheet" href="./stylesheets/loader.css">
+    <link rel="stylesheet" href="./stylesheets/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <%- include('./partials/loader') %>
+    <div id="main" class="smooth-scroll h-[auto] bg-[#000]">
+        <%- include('./partials/credit') %>
+        <%- include('./partials/navbar') %>
+        <div data-scroll class="w-screen h-[100vh] bg-black overflow-visible gallery-container z-20">
+            <div class="first w-full h-[50vh] bg-[#000] top-[0%] z-50 absolute overflow-hidden">
+                <p class="absolute text-2xl top-[22vh] left-1/2 -translate-x-1/2 text-white">MUN: Art of Negotiation</p>
+                <h1 class="uppercase text-[20vw] relative text-white text-center top-[14vh] font-semibold">Gallery</h1>
+            </div>
+            <div data-scroll class="backPage fixed top-0 left-0 w-full h-full flex items-center justify-center z-10 bg-no-repeat bg-center bg-cover">
+                <h2 class="text-[7vw] font-bold text-[#fff]">Gallery</h2>
+            </div>
+            <div class="last w-full h-[50vh] bg-[#000] top-[50vh] z-50 fixed overflow-hidden">
+                <h1 class="uppercase text-[20vw] relative text-white text-center bottom-[36vh] font-semibold">Gallery
+                </h1>
+            </div>
+        </div>
+        <div data-scroll data-scroll-speed="0" class="mid relative w-screen h-[auto] top-[-1vh] z-30 bg-[#000]">
+            <div class="frontPage px-5 py-10 relative top-0 left-0 w-screen h-full z-20 bg-black/10 text-white">
+                <h3 class="h-[20vh] text-center w-full items-center text-3xl">Step Into the Gallery of Leadership –
+                    Where Every Delegate is a Masterpiece</h3>
+                <div class="galleryImages w-full h-[auto] block px-8 flex flex-row gap-5 justify-between items-center">
+                    <div class="row-1 w-[25%] h-full flex flex-col gap-5">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1485872299829-c673f5194813?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1519214605650-76a613ee3245?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                    </div>
+                    <div class="row-1 w-[25%] h-full flex flex-col gap-5">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1485872299829-c673f5194813?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1519214605650-76a613ee3245?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                    </div>
+                    <div class="row-1 w-[25%] h-full flex flex-col gap-5">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1485872299829-c673f5194813?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1519214605650-76a613ee3245?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                    </div>
+                    <div class="row-1 w-[25%] h-full flex flex-col gap-5">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1519214605650-76a613ee3245?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+                        <img class="w-full h-[auto] object-fit"
+                            src="https://images.unsplash.com/photo-1485872299829-c673f5194813?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="img1">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('./partials/footer') %>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./javascripts/locomotive.js"></script>
+    <script src="./javascripts/navbar.js"></script>
+    <script src="./javascripts/gallery.js"></script>
+     <script src="./javascripts/loader.js"></script> 
+</body>
+
+</html>

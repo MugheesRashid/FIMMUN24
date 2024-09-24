@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MUN Registration</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="./stylesheets/register.css">
+  <link rel="stylesheet" href="./stylesheets/loader.css">
+  <link rel="stylesheet" href="./stylesheets/footer.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<%- include('./partials/loader') %>
+<body class="h-[auto] w-screen flex items-center justify-center">
+   <div id="main" class="smooth-scroll">
+    <%- include('./partials/credit') %>
+    <%- include('./partials/navbar') %>
+  <!-- Container -->
+  <div class="glass w-full max-w-4xl p-8 rounded-xl border border-gray-200 relative left-1/2 -translate-x-1/2 mt-[35vh] md:mt-[20vh]">
+    
+    <!-- Heading -->
+    <h2 class="text-4xl font-extrabold text-white text-center mb-8">MUN 2024 Registration</h2>
+
+    <!-- Form -->
+    <form action="/register-user" method="POST" enctype="multipart/form-data" class="space-y-6" id="registrationForm">
+      
+      <!-- Full Name -->
+      <div>
+        <label for="name" class="block text-white font-medium mb-2">Full Name</label>
+        <input type="text" id="name" name="name" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" placeholder="e.g:User Number 1" required>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-white font-medium mb-2">Email</label>
+        <input type="email" id="email" name="email" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" placeholder="e.g: abc@gmail.com" required>
+      </div>
+
+      <!-- Contact Number -->
+      <div>
+        <label for="contact" class="block text-white font-medium mb-2">Contact Number</label>
+        <input type="tel" id="contact" name="contact" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" placeholder="e.g: 3123456789" required>
+      </div>
+
+      <div>
+        <label for="cnic" class="block text-white font-medium mb-2">CNIC</label>
+        <input type="text" id="cnic" name="cnic" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" placeholder="Enter your CNIC number">
+      </div>
+      <div id="message" class="message text-red-500 font-lg"></div>
+
+      <!-- School Name -->
+      <div>
+        <label for="school" class="block text-white font-medium mb-2">School/Institution</label>
+        <input type="text" id="school" name="school" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" placeholder="e.g:Fazaia Inter Collage Minhas" required>
+      </div>
+
+      <!-- Delegation Type -->
+      <div>
+        <label for="delegation" class="block text-white font-medium mb-2">Delegation Type</label>
+        <select id="delegation" name="delegation" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" required>
+          <option value="">Select You Role</option>
+          <option value="Deligate">Delegate(Rs. 2500)</option>
+          <option value="Observer">Obsever(Rs. 3000)</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="committee" class="block text-white font-medium mb-2">Committies </label>
+        <select id="committee" name="committee" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" required>
+          <option value="">Select You Committes</option>
+          <option value="UNHRC">UNHRC(United Nation Human Right Council)</option>
+          <option value="UNSC">UNSC(United Nation Security Council)</option>
+          <option value="PNA">PNA(Pakistan National Assembly)</option>
+          <option value="UNCSW">UNCSW(Commission on the Status of Women)</option>
+          <option value="ECOSOC">ECOSOC(United Nations Economic and Social Council)</option>
+          <option value="UNESCO">UNESCO(United Nations Educational, Scientific and Cultural Organization)</option>
+          <option value="DISEC">DISEC(Disarmament and International Security Committee)</option>
+        </select>
+      </div>
+
+      <div class="relative">
+        <label for="file-upload" class="file-label bg-blue-500 text-white py-3 px-6 rounded-lg text-center font-semibold hover:bg-blue-600 transition duration-300">
+            Payment Proof
+        </label>
+        <input type="file" id="file-upload" name="payment" class="custom-file-input" required/>
+     </div>
+
+    <div class="mt-4">
+        <span id="file-name" class="text-gray-600">No file chosen</span>
+    </div>
+
+      <!-- Comments -->
+      <div>
+        <label for="comments" class="block text-white font-medium mb-2">Your Experience For MUN</label>
+        <textarea id="comments" name="comments" rows="4" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" placeholder="e.g: Its my first time"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center">
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">Register Now</button>
+      </div>
+    </form>
+  </div>
+  <%- include('./partials/footer') %>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+<script src="./javascripts/navbar.js"></script>
+<script src="./javascripts/locomotive.js"></script>
+<script src="./javascripts/loader.js"></script>
+<script>
+    document.getElementById('file-upload').addEventListener('change', function() {
+        const fileName = this.files.length > 0 ? this.files[0].name : 'No file chosen';
+        document.getElementById('file-name').textContent = fileName;
+    });
+    let input = document.querySelector('#contact')
+    var iti = window.intlTelInput(input, {
+      initialCountry: "pk",
+      preferredCountries: ["pk", "us", "ag"],
+      separateDialCode: true,
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+    document.querySelector("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var phoneNumber = iti.getNumber();
+
+      if (iti.isValidNumber()) {
+        document.querySelector("form").submit()
+      } else {
+        alert("Invalid phone number.");
+      }
+    });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const cnicInput = document.querySelector("#cnic");
+    const messageDiv = document.querySelector("#message");
+
+    cnicInput.addEventListener("input", function() {
+      const cnic = cnicInput.value;
+      const cleanedCnic = cnic.replace(/\D/g, '');
+
+      const formattedCnic = cleanedCnic.length > 5
+        ? cleanedCnic.slice(0, 5) + '-' + cleanedCnic.slice(5, 12)
+        : cleanedCnic;
+
+      cnicInput.value = formattedCnic;
+
+      // Validate CNIC (CNIC should be 13 digits long)
+      if (cleanedCnic.length === 13) {
+        messageDiv.textContent = "Valid CNIC number.";
+        messageDiv.style.color = "#28a745"; // Green for valid
+      } else {
+        messageDiv.textContent = "CNIC number should be 13 digits.";
+        messageDiv.style.color = "#ff5f6d"; // Red for invalid
+      }
+    });
+  });
+</script>
+<script>
+  function showErrorToast(message) {
+  Toastify({
+    text: message,
+    duration: 7000,
+    gravity: "top",
+    position: "right",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    stopOnFocus: true,
+    style: {
+      backdropFilter: "blur(10px)",
+      boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+      borderRadius: "10px",
+      padding: "16px",
+      color: "#ff5f6d",
+    },
+  }).showToast();
+}
+
+  const params = new URLSearchParams(window.location.search);
+  const errorMessage = params.get('error');
+
+  if (errorMessage) {
+    showErrorToast(errorMessage.replace(/\+/g, ' ')); 
+  }
+</script>
+</body>
+</html>

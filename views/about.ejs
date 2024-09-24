@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./stylesheets/about.css">
+    <link rel="stylesheet" href="./stylesheets/loader.css">
+    <link rel="stylesheet" href="./stylesheets/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <%- include('./partials/loader') %>
+    <div id="main" class="smooth-scroll">       
+        <%- include('./partials/credit') %>
+        <%- include('./partials/navbar') %>
+        <div data-scroll data-scroll-speed="0" class="aboutUs z-10 relative h-screen w-screen flex flex-col gap-8 md:gap-0 md:flex-row text-white items-center justify-center pt-[20vh]">
+            <h1 class="w-[300px] font-semibold text-[7vw] md:text-[5vw] relative -mt-10">What Is MUN?</h1>
+            <p class="w-2/3 text-[4vw] md:text-[2vw] tracking-tighter font-light relative z-10">Model United Nations (MUN) is an educational simulation that allows students to engage in diplomatic discussions and negotiations on global issues. Participants, known as delegates, represent different countries and assume the roles of diplomats, working to address real-world challenges such as climate change, human rights, and international security. Through this immersive experience, delegates develop critical skills in public speaking, research, teamwork, and conflict resolution, while gaining a deeper understanding of international relations and the functioning of the United Nations. MUN conferences provide a platform for young leaders to express their ideas, collaborate with peers, and cultivate a commitment to global citizenship.
+            </p>
+        </div>
+        <!-- Page-2 -->
+        <div data-scroll data-scroll-speed="5" class="page-2 z-50 h-auto w-screen text-white">
+            <h2 class="text-[7vw] bg-[rgb(0,0,0)] font-normal text-white px-10 py-5 tracking-tighter relative z-50">Brought to You By
+                the Visionaries at
+            </h2>
+            <div class="h-screen w-screen bg-[rgb(0,0,0)] flex justify-center items-center relative z-50">
+                <h4 class="text-[6vw] z-10 font-semibold text-center relative px-5">Fazaia Inter Collage Minhas:Leading the Charge
+                    at MUN2024—Where Future Leaders Meet</h4>
+                <div
+                    class="schoolImg w-full md:w-[30vw] h-[80vh] bg-cover bg-no-repeat bg-center rounded-lg bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hibbing_High_School_2014.jpg/1024px-Hibbing_High_School_2014.jpg')] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+                </div>
+                <p
+                    class="btn2 overflow-hidden px-3 py-1 rounded-full bg-black border-[1px] border-solid border-white/50 cursor-pointer absolute bottom-5 tracking-tighter font-semibold">
+                    Fazaia Inter Collage Minhas <span
+                        class="overflow-hidden inline-block h-4 w-4 bg-[#1A237E] rounded-full top-[2px] relative ml-1"></span>
+                </p>
+            </div>
+        </div>
+        <!-- Page3 -->
+        <div data-scroll data-scroll-speed="0" class="page-3 w-screen pt-[10vh] h-[230vh] bg-[transparent]">
+            <h5 class="text-[6vw] md:text-[4vw] font-normal text-white px-10 py-5 tracking-tighter mb-[5vh]">Proud Legacy of
+                MUN Success: A Tradition of Excellence</h5>
+            <div class="Success w-full h-[80vh] px-10 flex flex-col md:flex-row items-center h-auto text-white">
+                <div class="yearText w-full md:w-1/2 h-[40vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+                    <p
+                        class="text-[170px] h-full relative tracking-tighter relative inline-block overflow-hidden w-full flex flex-row justify-center items-baseline">
+                        20<span
+                            class="flex transformingText inline-block h-full flex-col items-baseline text-[20vw] overflow-hidden"><span
+                                class="w-full relative h-[40vh] md:h-[80vh] block">18</span><span
+                                class="relative right-0 w-full h-[40vh] md:h-[80vh] block">22</span></span></p><!--60VhHeight-->
+                </div>
+                <div class="imageDiv w-full md:w-1/2 h-[40vh] md:h-[80vh] rounded-lg overflow-hidden">
+                    <div class="w-full h-full object-fit relative">
+                      <img class="w-full imgs h-full absolute z-30 object-fit" src="./images/2018.JPG">
+                      <img class="w-full h-full absolute z-20 object-fit" src="./images/2022.JPG">
+
+                    </div>
+                </div>
+            </div>
+            <div class="w-screen h-screen"></div>
+        </div>
+        <%- include('./partials/footer') %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./javascripts/navbar.js"></script>
+    <script src="./javascripts/locomotive.js"></script>
+    <script src="./javascripts/aboutUs.js"></script>
+    <script src="./javascripts/loader.js"></script>
+</body>
+
+</html>

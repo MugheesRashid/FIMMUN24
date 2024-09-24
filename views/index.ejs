@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUN2024</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/loader.css">
+    <link rel="stylesheet" href="./stylesheets/footer.css">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="md:block hidden cursor cursor2"></div>
+    <div
+        class="loader z-[999999] w-screen h-screen bg-black text-white flex justify-center items-center fixed top-0 left-0">
+        <h1 class="lg:text-5xl sm:text-[7vw]">Introducing You TO</h1><span
+            class="dot h-3 w-3 -bottom-3 left-8 opacity-0 relative bg-white rounded-full"></span>
+    </div>
+    <%- include('./partials/loader') %>
+    <div id="main" class="smooth-scroll">
+        <%- include('./partials/credit') %>
+        <%- include('./partials/navbar') %>
+        <!-- page1 -->
+        <div data-scroll data-scroll-speed="-5"
+            class="IntroPage relative w-screen h-screen overflow-hidden bg-black z-10">
+            <button id="muteButton"
+                class="mute-btn z-[99] absolute top-1/2 -translate-y-1/2 -left-3 p-2 pl-4 hover:pl-5 transition-linear transition-all transition-2 rounded-lg">
+                <svg id="muteIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path id="mutePath" d="M9 5v14l-5-5H2V10h2l5-5zm7 4v6m-2-4l4 4m0-8l-4 4" />
+                </svg>
+            </button>
+            <div class="video z-[-9] top-0 left-0 h-screen w-full overflow-hidden absolute">
+                <video id="introVideo" class="w-full h-full object-cover" src="./flagHorizontal.mp4" loop muted></video>
+            </div>
+            <div onmouseenter="setCursor('cursor1')" onmouseleave="setCursor('lol')"
+                class="blackPage block relative h-screen w-screen bg-black z-[12]"></div>
+            <h2
+                class="font-semibold text-white absolute xl:-bottom-[110px] lg:-bottom-[100px] md:-bottom-[30px] sm:-bottom-[30px] -bottom-[50px] leading- left-1/2 -translate-x-1/2 text-[15vw] mb-8 z-[13]">
+                FIMMUN2024</h2>
+        </div>
+        <!-- page2 -->
+        <div data-scroll style="border-top-left-radius: 15px;border-top-right-radius: 15px;"
+            class="z-[99995] relative page2 w-screen md:h-[130vh] h-[100vh] overflow-hidden">
+            <div
+                class="text-[2rem] slider-container whitespace-nowrap tracking-tighter overflow-hidden relative z-[1] w-screen flex flex-row">
+                <div class="flex flex-row slide items-center">
+                    <p class='flex flex-row justify-between'>
+                    <p class="text">Forge Global Connections</p>
+                    <div class="bg-[url('./images/logo.png')] mx-4 w-[10vw] h-[10vw] bg-norepeat bg-center"></div>
+                    </p>
+                    <p class='flex flex-row justify-between'>
+                    <p class="text">Speak. Lead. Impact</p>
+                    <div class="bg-[url('./images/logo.png')] mx-4 w-[10vw] h-[10vw] bg-norepeat bg-center"></div>
+                    </p>
+                </div>
+                <div class="flex flex-row slide items-center">
+                    <p class='flex flex-row justify-between'>
+                    <p class="text">Forge Global Connections</p>
+                    <div class="bg-[url('./images/logo.png')] mx-4 w-[10vw] h-[10vw] bg-norepeat bg-center"></div>
+                    </p>
+                    <p class='flex flex-row justify-between'>
+                    <p class="text">Speak. Lead. Impact</p>
+                    <div class="bg-[url('./images/logo.png')] mx-4 w-[10vw] h-[10vw] bg-norepeat bg-center"></div>
+                    </p>
+                </div>
+                <div class="flex flex-row slide items-center">
+                    <p class='flex flex-row justify-between'>
+                    <p class="text">Forge Global Connections</p>
+                    <div class="bg-[url('./images/logo.png')] mx-4 w-[10vw] h-[10vw] bg-norepeat bg-center"></div>
+                    </p>
+                    <p class='flex flex-row justify-between'>
+                    <p class="text">Speak. Lead. Impact</p>
+                    <div class="bg-[url('./images/logo.png')] mx-4 w-[10vw] h-[10vw] bg-norepeat bg-center"></div>
+                    </p>
+                </div>
+            </div>
+            <div class="px-[5vw] py-[10vw] about">
+                <h4 class="text-lg text-white tracking-tighter uppercase font-semibold">About MUN(Model United Nation)
+                </h4>
+                <p
+                    class="lg:text-[2.2rem] md:text-[5vw] leading-[1.7rem] text-[4vw] md:leading-[2rem] px-5 mt-5 tracking-tighter lg:leading-[3.5rem] text-white font-thin">
+                    Model United
+                    Nations
+                    (MUN) is a dynamic simulation where students act as diplomats to engage in global diplomacy,
+                    negotiation, and debate. It enhances skills in public speaking, critical thinking, and teamwork
+                    while deepening understanding of international relations and policy-making. MUN conferences offer a
+                    valuable platform for both experienced delegates and newcomers to develop leadership skills and
+                    learn about global issues.
+                </p>
+                <a href="#" class="relative btn text-[1.3rem] h-[9vh] w-[12rem] border-[1px] border-solid border-[#fff] overflow-hidden text-white top-10 left-1/2 font-lighter rounded-full -translate-x-1/2 inline-block">
+                    <span class="block h-[9vh] text-black py-3 w-full text-center bg-white -translate-y-[9vh]">Learn More</span>
+                    <span class="block h-[9vh] py-3 w-full text-center -translate-y-[9vh]">Learn More</span>
+                </a>
+            </div>
+        </div>
+        <!-- Page3 -->
+         <div class="info">
+        <div data-scroll class="commities w-screen z-10 text-white px-10 z-30">
+            <h5 class="uppercase text-white text-[16vw] leading-2">committees</h5>
+            <div class="frame flex flex-row justify-between">
+                <div class="discreption w-1/2 h-[100vh] overflow-hidden">
+                    <div class="sub-comm relative firsttext h-screen w-full flex justify-center flex-col px-5 ml-5">
+                        <h6 class="text-md">UNGA</h6>
+                        <h7 class="font-semibold text-3xl w-3/4">United Nation General Assembly</h7>
+                        <p class="w-3/4 pt-4 text-sm">UNGA is the global forum where all United Nations member states
+                            come together to discuss and
+                            address international issues and policies.</p>
+                        <span class="line"></span>
+                        <span class="dotted"></span>
+                    </div>
+                    <div class="sub-comm relative secondtext h-screen w-full flex justify-center flex-col px-5 ml-5">
+                        <h6 class="text-md">UNGA</h6>
+                        <h7 class="font-semibold text-3xl w-3/4">United Nation General Assembly</h7>
+                        <p class="w-3/4 pt-4 text-sm">UNGA is the global forum where all United Nations member states
+                            come together to discuss and
+                            address international issues and policies.</p>
+                        <span class="line"></span>
+                        <span class="dotted"></span>
+                    </div>
+                    <div class="sub-comm relative thirdtext h-screen w-full flex justify-center flex-col px-5 ml-5">
+                        <h6 class="text-md">UNGA</h6>
+                        <h7 class="font-semibold text-3xl w-3/4">United Nation General Assembly</h7>
+                        <p class="w-3/4 pt-4 text-sm">UNGA is the global forum where all United Nations member states
+                            come together to discuss and
+                            address international issues and policies.</p>
+                        <span class="line"></span>
+                        <span class="dotted"></span>
+                    </div>
+                    <div class="sub-comm relative lasttext h-screen w-full flex justify-center flex-col px-5 ml-5">
+                        <h6 class="text-md">UNGA</h6>
+                        <h7 class="font-semibold text-3xl w-3/4">United Nation General Assembly</h7>
+                        <p class="w-3/4 pt-4 text-sm">UNGA is the global forum where all United Nations member states
+                            come together to discuss and
+                            address international issues and policies.</p>
+                        <span class="line"></span>
+                        <span class="dotted"></span>
+                    </div>
+                </div>
+                <div
+                    class="images h-[90vh] overflow-hidden rounded-lg mr-[6vw] relative w-1/3 top-[50vh] -translate-y-1/2">
+                    <div class="image h-full w-full">
+                        <img class="img w-full h-full object-fit object-fit first"
+                        src="https://images.unsplash.com/photo-1587238192270-1785984d61d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="img w-full h-full object-fit object-fit second"
+                        src="https://images.unsplash.com/photo-1529673203658-56306382b724?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="img w-full h-full object-fit object-fit third"
+                        src="https://images.unsplash.com/photo-1535483102974-fa1e64d0ca86?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="img w-full h-full object-fit object-fit last"
+                        src="https://images.unsplash.com/photo-1534201041980-ab6cb6c36cc3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    </div> 
+                </div>
+            </div>
+            <a href="#" class="relative btn text-[1.3rem] h-[9vh] w-[12rem] border-[1px] border-solid border-[#fff] overflow-hidden text-white top-2 left-1/2 font-lighter rounded-full -translate-x-1/2 inline-block">
+                <span class="block h-[9vh] py-3 w-full text-center bg-white -translate-y-[9vh] text-black">Learn More</span>
+                <span class="block h-[9vh] py-3 w-full text-center -translate-y-[9vh]">Learn More</span>
+            </a>
+        </div>
+        <!-- PAGE4 -->
+        <div class="w-screen block mb-10">
+            <h5 class="uppercase text-white text-[16vw] leading-2 px-5">Our partners</h5>
+            <div class="partners flex flex-row items-center justify-between h-screen w-[200vw] pl-5 h-screen pb-5">
+                <div class="w-[33.3vw] partner h-full flex flex-col justify-between items-center">
+                    <h6 class="h-[15%] w-full text-3xl px-5 py-2 text-3xl text-white"><span
+                            class="font-semibold text-5xl pr-2">1.</span>partner</h6>
+                    <div
+                        class="h-[75%] w-[88%] m-[auto] bg-[url('./images/coming.webp')] bg-no-repeat bg-cover bg-center">
+                    </div>
+                </div>
+                <div class="w-[33.3vw] partner h-full flex flex-col-reverse justify-between items-center">
+                    <h6 class="h-[15%] w-full text-3xl px-5 py-2 text-3xl text-white"><span
+                            class="font-semibold text-5xl pr-2">2.</span>Partner</h6>
+                    <div
+                        class="h-[75%] w-[88%] m-[auto] bg-[url('./images/coming.webp')] bg-no-repeat bg-cover bg-center">
+                    </div>
+                </div>
+                <div class="w-[33.3vw] partner h-full flex flex-col justify-between items-center">
+                    <h6 class="h-[15%] w-full text-3xl px-5 py-2 text-3xl text-white"><span
+                            class="font-semibold text-5xl pr-2">3.</span>Partner</h6>
+                    <div
+                        class="h-[75%] w-[88%] m-[auto] bg-[url('./images/coming.webp')] bg-no-repeat bg-cover bg-center">
+                    </div>
+                </div>
+                <div class="w-[33.3vw] partner h-full flex flex-col-reverse justify-between items-center">
+                    <h6 class="h-[15%] w-full text-3xl px-5 py-2 text-3xl text-white"><span
+                            class="font-semibold text-5xl pr-2">4.</span>Partner</h6>
+                    <div
+                        class="h-[75%] w-[88%] m-[auto] bg-[url('./images/coming.webp')] bg-no-repeat bg-cover bg-center">
+                    </div>
+                </div>
+                <div class="w-[33.3vw] partner h-full flex flex-col justify-between items-center">
+                    <h6 class="h-[15%] w-full text-3xl px-5 py-2 text-3xl text-white"><span
+                            class="font-semibold text-5xl pr-2">5.</span>Partner</h6>
+                    <div
+                        class="h-[75%] w-[88%] m-[auto] bg-[url('./images/coming.webp')] bg-no-repeat bg-cover bg-center">
+                    </div>
+                </div>
+                <div class="w-[33.3vw] partner h-full flex flex-col-reverse justify-between items-center">
+                    <h6 class="h-[15%] w-full text-3xl px-5 py-2 text-3xl text-white"><span
+                            class="font-semibold text-5xl pr-2">6.</span>Partner</h6>
+                    <div
+                        class="h-[75%] w-[88%] m-[auto] bg-[url('./images/coming.webp')] bg-no-repeat bg-cover bg-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <%- include('./partials/footer') %>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="./javascripts/locomotive.js"></script>
+    <script src="./javascripts/script.js"></script>
+    <script src="./javascripts/navbar.js"></script>
+    <script src="./javascripts/gsapAnimations.js"></script>
+    <script src="./javascripts/loader.js"></script>
+</body>
+
+</html>

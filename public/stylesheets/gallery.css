@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background: linear-gradient(135deg, #000000, #00008b); /* Gradient Background */
+}
+.menu::-webkit-scrollbar {
+    display: none
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::selection{
+  color: #000000;
+  background-color: #fff;
+}
+h3{
+  font-family: "Playwrite DK Loopet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+ @media(max-width: 480px){
+  .first h1{
+    top: 42vh!important;
+  }
+  .last h1{
+    top: -8vh!important;
+  }
+  .first p{
+    width: 100%!important;
+    text-align: center!important;
+    top: 35vh!important;
+  }
+  h3{
+    font-size: 5vw!important;
+  }
+  .frontPage{
+    background-color: #000!important;
+    }
+  .galleryImages{
+   flex-wrap: wrap!important;
+   gap: 5px!important;
+   padding: 0!important;
+  }
+  .row-1{
+    width: 47%!important;
+  }
+ }
+.top{
+    background-color: #000!important;
+}

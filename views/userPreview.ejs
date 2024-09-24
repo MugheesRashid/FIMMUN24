@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card-detail {
+      background-color: #1f2937; /* Dark gray for card */
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      margin: auto;
+    }
+    
+    .header {
+      background-color: #111827; /* Dark gray for header */
+      padding: 16px;
+    }
+
+    .header h1 {
+      color: #ffffff;
+    }
+    
+    .input-field {
+      background-color: #374151; /* Slightly lighter gray for inputs */
+      border: 1px solid #4b5563; /* Border color */
+      border-radius: 8px;
+      padding: 12px;
+      width: 100%;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .input-field::placeholder {
+      color: #9ca3af; /* Light gray placeholder text */
+    }
+
+    .button {
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #2563eb; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container mx-auto flex items-center justify-between">
+      <h1 class="text-2xl font-bold">User Details</h1>
+      <a href="/pannel" class="text-blue-400 hover:text-blue-300">Back to Admin Panel</a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="flex-1 p-6 flex items-center justify-center">
+    <div class="card-detail min-w-[50vw]">
+      <h2 class="text-3xl font-semibold mb-4">Username: <span id="userName" class="text-blue-300"><%= user.fullname %></span></h2>
+      <p class="text-xl mb-4">Committee: <span id="committee" class="text-blue-300"><%= user.committee %></span></p>
+      <p class="text-lg mb-4 font-semibold">Status: 
+        <% if (user.status === 'Unverified') { %>
+          <span class="text-yellow-400 capitalize">Unverified</span>
+      <% } else if (user.status === 'Removed') { %>
+          <span class="text-red-400 capitalize">Removed</span>
+      <% } else { %>
+          <span class="text-green-400 capitalize">Verified</span>
+      <% } %>
+      </p>
+      <p class="text-lg mb-4 font-semibold">Institute: <span id="status" class="text-white"><%= user.institute %></span></p>
+      <% if(user.experience !== ""){ %>
+        <p class="text-lg mb-4 font-semibold">Experience: <span id="status" class="text-white"><%= user.experience %></span></p>
+      <% } %>
+      <p class="text-lg mb-4 font-semibold">deligationType: <span id="status" class="text-white"><%= user.deligationType %></span></p>
+      <p class="text-white text-lg font-semibold">Payment Proof:</p>
+      <div class="box w-full h-[70vh] my-5 bg-no-repeat rounded-lg bg-cover bg-center bg-[url('/images/paymentProofs/<%= user.paymentProof %>')]"></div>
+      <% if(user.userId === undefined || user.status === "Removed"){ %>
+        <form action="/assign-user-id/<%= user._id %>" method="post">
+          <div class="mb-6">
+            <% if(user.deligationType === 'Deligate'){ %>
+              <input type="text" name="country" class="input-field" placeholder="Enter Country" id="country">
+            <% } %>
+            <textarea class="input-field" name="note" placeholder="Add a note..." id="note" rows="4"></textarea>
+          </div>
+    
+          <div class="flex justify-between">
+            <button type="submit" class="button bg-blue-500">Save Changes</button>
+          </div>
+        </form>
+      <% }else{ %>
+        <form action="/changeNote/<%= user._id %>" method="post">
+          <div class="mb-6">
+            <textarea class="input-field" name="note" placeholder="Add a note..." id="note" rows="4"></textarea>
+          </div>
+    
+          <div class="flex justify-between">
+            <button type="submit" class="button bg-blue-500">Update Note</button>
+          </div>
+        </form>
+      <% } %>
+      <% if(user.status === "unverified" || user.status !== "Removed"){%>
+        <form class="my-10" action="/remove/<%= user._id %>" method="post">
+          <div class="mb-6">
+            <textarea class="input-field" name="note" placeholder="Add a note..." id="note" rows="4"></textarea>
+          </div>
+    
+          <div class="flex justify-between">
+            <button type="submit" class="button bg-red-500 hover:bg-red-600">Remove User</button>
+          </div>
+        </form>
+  
+     <% } %>
+    </div>
+  </main>
+
+</body>
+</html>

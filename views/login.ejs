@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MUN Registration</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/stylesheets/register.css">
+  <link rel="stylesheet" href="/stylesheets/loader.css">
+  <link rel="stylesheet" href="/stylesheets/footer.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+   
+  </style>
+</head>
+<%- include('./partials/loader') %>
+<body class="h-[auto] w-screen flex items-center justify-center">
+   <div id="main" class="smooth-scroll">
+    <%- include('./partials/credit') %>
+    <%- include('./partials/navbar') %>
+  <!-- Container -->
+  <div class="glass w-full max-w-4xl p-8 rounded-xl border border-gray-200 relative left-1/2 -translate-x-1/2 mt-[35vh] md:mt-[20vh]">
+    
+    <!-- Heading -->
+    <h2 class="text-4xl font-extrabold text-white text-center mb-8">MUN 2024 Track Your Status</h2>
+
+    <!-- Form -->
+    <form action="/Track-status" method="POST"class="space-y-6">
+
+      <!-- School Name -->
+      <div>
+        <label for="school" class="block text-white font-medium mb-2">Tracking ID</label>
+        <input type="text" id="TrackingId" name="TrackingId" class="w-full p-4 rounded-lg bg-black text-white border border-gray-600 input-focus" placeholder='e.g: TRK-123456' required>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center">
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">Track Now</button>
+      </div>
+    </form>
+  </div>
+  <%- include('./partials/footer') %>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+<script src="/javascripts/navbar.js"></script>
+<script src="/javascripts/locomotive.js"></script>
+<script src="/javascripts/loader.js"></script>
+<script>
+  function showErrorToast(message) {
+  Toastify({
+    text: message,
+    duration: 7000,
+    gravity: "top",
+    position: "right",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    stopOnFocus: true,
+    style: {
+      backdropFilter: "blur(10px)",
+      boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+      borderRadius: "10px",
+      padding: "16px",
+      color: "#ff5f6d",
+    },
+  }).showToast();
+}
+
+  const params = new URLSearchParams(window.location.search);
+  const errorMessage = params.get('error');
+
+  if (errorMessage) {
+    showErrorToast(errorMessage.replace(/\+/g, ' ')); 
+  }
+</script>
+
+</body>
+</html>
