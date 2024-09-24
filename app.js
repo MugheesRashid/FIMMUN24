@@ -32,7 +32,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(favicon(path.join(__dirname, 'public', 'logo.png')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 
 // Pass the functions directly, without invoking them
 passport.serializeUser(function(user, done) {
