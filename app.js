@@ -6,6 +6,8 @@ var logger = require('morgan');
 var session = require('express-session')
 require('dotenv').config();
 const cors = require("cors")
+const favicon = require('serve-favicon'); // Import favicon middleware
+
 const corsConfig = {
   origin: "*",
   credentials: true, // Fix the typo
@@ -30,7 +32,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'logo.png')));
 
 // Pass the functions directly, without invoking them
 passport.serializeUser(function(user, done) {
